@@ -1,0 +1,63 @@
+.hotel {
+    width: 800px;
+    height: 250px;
+    background-color: rgb(248, 248, 248);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.right-side {
+    width: 60%;
+    float: right;
+
+}
+
+.right-side span {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+  
+}
+
+.right-side span.name {
+    font-size:24px;
+    font-weight: bold;
+}
+
+.right-side span.name:first-letter {
+    text-transform: uppercase;
+}
+
+.right-side p.description {
+    font-size:12px;
+    padding-left: 5px;
+    padding-right: 15px;
+
+}
+.left-side {
+    width: 39%;
+    background-color: rgb(216, 215, 215);
+    height: 250px;
+    float: left;
+}
+button.reviews {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-color: #d3d3d366;
+    font-weight: bold;
+    bottom: 20px;
+    position: absolute;
+    font-size: 14px;
+    background-color: rgb(226, 225, 225);
+}
+.price {
+    float: right;
+    margin-right: 20px;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.date {
+    float: right;
+    margin-right: 20px;
+}
