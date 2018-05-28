@@ -1,28 +1,44 @@
+#load-button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border-color: #d3d3d366;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: rgb(226, 225, 225);
+    margin: 20px 320px;
+}
+
 .hotel {
     width: 800px;
     height: 250px;
     background-color: rgb(248, 248, 248);
-    margin-bottom: 20px;
+    margin-top: 20px;
     position: relative;
+    border-radius: 5px;
+    border-color: rgba(128, 128, 128, 0.651);
+    border-style: inset;
+    border-width: 1px;
 }
 
 .right-side {
-    width: 60%;
+    width: 58%;
     float: right;
-
+    height: 250px;
 }
 
 .right-side span {
     display: block;
     width: 100%;
-    padding: 5px;
-    font-size: 14px;
-  
+    font-size: 14px; 
 }
-
+.city {
+    padding-top: 0px;
+    padding-left: 1px;
+}
 .right-side span.name {
     font-size:24px;
     font-weight: bold;
+    padding-top: 20px;
 }
 
 .right-side span.name:first-letter {
@@ -31,15 +47,24 @@
 
 .right-side p.description {
     font-size:12px;
-    padding-left: 5px;
+    padding-top: 10px;
+    padding-left: 1px;
     padding-right: 15px;
 
 }
 .left-side {
-    width: 39%;
+    width: 312px;
     background-color: rgb(216, 215, 215);
     height: 250px;
     float: left;
+    border-radius: 5px 0 0 5px;
+    border-color: rgba(128, 128, 128, 0.651);
+    border-style: inset;
+    border-width: 0 1px 0 0;
+}
+.image {
+    height: 250px;
+    width: 312px;
 }
 button.reviews {
     padding: 10px 20px;
@@ -51,13 +76,100 @@ button.reviews {
     font-size: 14px;
     background-color: rgb(226, 225, 225);
 }
+button.hide {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-color: #d3d3d366;
+    font-weight: bold;
+    bottom: 20px;
+    position: absolute;
+    font-size: 14px;
+    background-color: rgb(226, 225, 225);
+}
 .price {
     float: right;
+    margin-top: 10px;
     margin-right: 20px;
+    margin-bottom: auto;
     font-size: 32px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .date {
     float: right;
     margin-right: 20px;
+    margin-bottom: auto;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
 }
+.dateprice {
+    width: 200px;
+    height: auto;
+    float: right;
+}
+.stars {
+    float: right;
+    margin: 10px 20px;
+
+}
+.comments {
+    width: 800px;
+    height: 100%;
+    background-color: rgb(189, 189, 189);
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    border-color: rgba(128, 128, 128, 0.651);
+    border-style: inset;
+    border-width: 1px;
+    margin-top: inherit;
+}
+.content {
+    width: 800px;
+    height: 170px;
+}
+.comments hr:last-of-type {
+    display:none;
+}
+
+.content p.name {
+    font-size:16px;
+    font-weight: bold;
+    padding-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    float: right;
+    margin-right: 10px
+
+}  
+.content p.comment {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:12px;
+    width: 80%;
+    float: right;
+    margin-right: 10px
+}
+.status {
+    width: 18%;
+    float: left;
+    height: 120px;
+}
+.dot {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(236, 235, 235);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 50px;
+  }
+  .dot p{
+      margin-left: 20px;
+      margin-top: 11px;
+      font-weight: 900;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  hr {
+      width: 750px;
+  }
+  
