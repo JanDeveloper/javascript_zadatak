@@ -63,10 +63,10 @@
     border-width: 0 1px 0 0;
 }
 .image {
-    height: 250px;
     width: 312px;
+    height: 250px;
 }
-button.reviews {
+button.reviews, button.review {
     padding: 10px 20px;
     border-radius: 5px;
     border-color: #d3d3d366;
@@ -152,6 +152,7 @@ button.hide {
     width: 18%;
     float: left;
     height: 120px;
+    
 }
 .dot {
     height: 50px;
