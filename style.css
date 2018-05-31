@@ -112,7 +112,8 @@ button.hide {
     margin: 10px 20px;
 
 }
-.comments {
+
+[class^="comments"] {
     width: 800px;
     height: 100%;
     background-color: rgb(189, 189, 189);
@@ -127,7 +128,7 @@ button.hide {
     width: 800px;
     height: 170px;
 }
-.comments hr:last-of-type {
+[class^="comments"] hr:last-of-type {
     display:none;
 }
 
