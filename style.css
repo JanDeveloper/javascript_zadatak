@@ -1,3 +1,10 @@
+body {
+    background-color: #e7e7e7fd;
+}
+
+.wrapper {
+    display: none;
+}
 #load-button {
     padding: 10px 30px;
     border-radius: 5px;
@@ -7,7 +14,16 @@
     background-color: rgb(226, 225, 225);
     margin: 20px 320px;
 }
-
+#hide-button {
+    display: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border-color: #d3d3d366;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: rgb(226, 225, 225);
+    margin: 20px 320px;
+}
 .hotel {
     width: 800px;
     height: 250px;
@@ -18,6 +34,8 @@
     border-color: rgba(128, 128, 128, 0.651);
     border-style: inset;
     border-width: 1px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #right-side {
@@ -112,6 +130,8 @@
     border-style: inset;
     border-width: 1px;
     margin-top: inherit;
+    margin-left: auto;
+    margin-right: auto;
 }
 .content {
     width: 800px;
@@ -136,7 +156,11 @@
     font-size:12px;
     width: 80%;
     float: right;
-    margin-right: 10px
+    margin-right: 10px;
+    
+}
+.content p.comment:first-letter{
+    text-transform: uppercase;
 }
 .status {
     width: 18%;
@@ -163,4 +187,223 @@
   hr {
       width: 750px;
   }
-  
+  @media screen and (min-width:1024px){
+    #load-button {
+        padding: 15px 45px;
+        font-size: 16px;
+        margin: 25px 500px;
+        width: 200px;
+    }
+    #hide-button {
+        padding: 15px 45px;
+        font-size: 16px;
+        margin: 25px 500px;
+        width: 200px;
+    }
+    .hotel {
+        width: 1200px;
+        height: 300px;
+    }
+    
+    #right-side {
+        height: 300px;
+    }
+    
+    #right-side span {
+        font-size: 18px; 
+    }
+    #right-side span.name {
+        font-size:30px;
+    }
+    
+    #right-side p.description {
+        font-size:14px;
+        padding-top: 15px;
+        padding-left: 2px;
+        padding-right: 20px;
+    
+    }
+    .left-side {
+        width: 440px;
+        height: 300px;
+    }
+    .image {
+        width: 440px;
+        height: 300px;
+    }
+    #right-side button {
+        padding: 15px 30px;
+        bottom: 30px;
+        font-size: 16px;
+        width: 200px;
+    }
+    .price {
+        margin-top: 20px;
+        margin-right: 30px;
+        font-size: 36px;
+    }
+    .date {
+        margin-right: 30px;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    .dateprice {
+        width: 250px;
+    }
+    .stars {
+        float: right;
+        margin: 15px 30px;
+        font-size: 24px;
+    }
+    .description {
+        font-size: 14px;
+    }
+    #comments {
+        width: 1200px;
+    }
+    .content {
+        width: 1200px;
+        height: 210px;
+    }
+    
+    .content p.name {
+        font-size:20px;
+        padding-top: 20px;
+        margin-right: 15px
+    
+    }  
+    .content p.comment {
+        font-size:14px;
+        margin-right: 15px
+    }
+    .status {
+        height: 150px;
+        
+    }
+    .dot {
+        height: 75px;
+        width: 75px;
+        margin-left: 60px;
+        margin-top: 75px;
+      }
+      .dot p{
+          margin-left: 30px;
+          margin-top: 16px;
+          font-weight: 1200;
+          font-size: 25px;
+      }
+      hr {
+          width: 1100px;
+  }
+}
+@media screen and (max-width:767px){
+    #load-button {
+        padding:5px 5px;
+        font-size: 12px;
+        margin: 15px 200px;
+        width: 70px;
+    }
+    #hide-button {
+        padding:5px 5px;
+        font-size: 12px;
+        margin: 15px 200px;
+        width: 70px;
+    }
+    .hotel {
+        width: 450px;
+        height: 600px;
+    }
+    
+    #right-side {
+        height: 300px;
+        width: 100%;
+    }
+    
+    #right-side span {
+        font-size: 14px;
+        padding-left: 10px; 
+    }
+    #right-side span.name {
+        font-size:24px;
+        padding-left: 10px;
+    }
+    
+    #right-side p.description {
+        font-size:14px;
+        padding-top: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+    
+    }
+    .left-side {
+        width: 450px;
+        height: 300px;
+    }
+    .image {
+        width: 450px;
+        height: 300px;
+    }
+    #right-side button {
+        padding: 5px 10px;
+        bottom: 10px;
+        font-size: 12px;
+        width: 70px;
+        margin-left: 200px;
+    }
+    .price {
+        margin-top: 20px;
+        margin-right: 10px;
+        font-size: 30px;
+    }
+    .date {
+        margin-right: 10px;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+    .dateprice {
+        width: 150px;
+    }
+    .stars {
+        float: right;
+        margin: 10px 10px;
+        font-size: 14px;
+    }
+    
+    #comments {
+        width: 450px;
+    }
+    .content {
+        width: 450px;
+        height: 150px;
+    }
+    
+    .content p.name {
+        font-size:16px;
+        padding-top: 10px;
+        margin-right: 5px;
+    
+    }  
+    .content p.comment {
+        font-size:12px;
+        margin-right: 5px
+    }
+    .status {
+        height: 100px;
+        
+    }
+    .dot {
+        height: 30px;
+        width: 30px;
+        margin-left: 15px;
+        margin-top: 25px;
+      }
+      .dot p{
+          margin-left: 11px;
+          margin-top: 7px;
+          font-weight: 700;
+          font-size: 16px;
+      }
+      hr {
+          width: 450px;
+  }
+}
