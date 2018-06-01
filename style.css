@@ -20,13 +20,13 @@
     border-width: 1px;
 }
 
-.right-side {
+#right-side {
     width: 58%;
     float: right;
     height: 250px;
 }
 
-.right-side span {
+#right-side span {
     display: block;
     width: 100%;
     font-size: 14px; 
@@ -35,17 +35,17 @@
     padding-top: 0px;
     padding-left: 1px;
 }
-.right-side span.name {
+#right-side span.name {
     font-size:24px;
     font-weight: bold;
     padding-top: 20px;
 }
 
-.right-side span.name:first-letter {
+#right-side span.name:first-letter {
     text-transform: uppercase;
 }
 
-.right-side p.description {
+#right-side p.description {
     font-size:12px;
     padding-top: 10px;
     padding-left: 1px;
@@ -66,17 +66,7 @@
     width: 312px;
     height: 250px;
 }
-button.reviews, button.review {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border-color: #d3d3d366;
-    font-weight: bold;
-    bottom: 20px;
-    position: absolute;
-    font-size: 14px;
-    background-color: rgb(226, 225, 225);
-}
-button.hide {
+#right-side button {
     padding: 10px 20px;
     border-radius: 5px;
     border-color: #d3d3d366;
@@ -112,7 +102,7 @@ button.hide {
     margin: 10px 20px;
 
 }
-.comments {
+#comments {
     width: 800px;
     height: 100%;
     background-color: rgb(189, 189, 189);
@@ -127,7 +117,7 @@ button.hide {
     width: 800px;
     height: 170px;
 }
-.comments hr:last-of-type {
+#comments hr:last-of-type {
     display:none;
 }
 

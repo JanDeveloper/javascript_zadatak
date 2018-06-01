@@ -1,87 +1,108 @@
-$(document).ready(function() {
-    $("#load-button").click(function(){
+$(document).ready(function () {
+    $("#load-button").click(function () {
         $.ajax({
-            url: "https://prodynafakeapi.herokuapp.com/api/hotels?count=1", 
+            url: "https://prodynafakeapi.herokuapp.com/api/hotels?count=2",
             type: 'GET',
-            success: function(result){
-            $.each(result, function(index, value){
-                var start = new Date (value.date_start);
-                var end = new Date (value.date_end);
-                var a = value.stars;
-                function star(a){       
-                    if (a == 5) {
-                      return "&#9733 &#9733 &#9733 &#9733 &#9733";
-                    } else if (a == 4) {
-                      return "&#9733 &#9733 &#9733 &#9733 &#9734";
-                    } else if (a == 3) {
-                        return "&#9733 &#9733 &#9733 &#9734 &#9734";
-                      }else if (a == 2) {
-                        return "&#9733 &#9733 &#9734 &#9734 &#9734";
-                      }else if (a == 1) {
-                        return "&#9733 &#9734 &#9734 &#9734 &#9734";
-                      }else {
-                          return "&#9734 &#9734 &#9734 &#9734 &#9734";
-                      }}
-                      var ary = value.images;
-                function img(ary){
-                      while(ary){ 
-                      return($(ary).first().get(0));}}
-                      $('.wrapper').append('<section class="hotels"><div class="hotel"><div class="left-side">\
-                <img class="image" src="' + img(ary) + '" alt="hotel_image"></div>\
-                <div class="right-side"><div class="stars">' + star(value.stars) + '</div>\
-                <span class="name">' + value.name + '</span><span class="city">' + value.city + '</span>\
-                <p class="description">' + value.description + '</p>\
-                <button class="reviews">' + 'Show reviews' + '</button>\
-                <div class="dateprice"><p class="price">' + value.price + ' &euro;</p>\
-                <p class="date">' + start.getDate() + '.' + start.getMonth() + '.' + start.getFullYear() + ' -\
-                 ' + end.getDate() + '.' + end.getMonth() + '.' + end.getFullYear() + '</p></div></div></div></section>')
-             })
-             $(".reviews").click(function() {
-                $(".reviews").hide();
-                $.ajax({
-                    url: "https://prodynafakeapi.herokuapp.com/api/reviews?hotel_id=id",
-                    type: 'GET',
-                success: function(results) {
-                    $('.hotels').append('<div class="comments"></div>')                            
-                    $.each(results, function(index, value) {
-                        var p = value.positive;
-                        function status(p){       
-                            if (p == true) {
-                              return "+";
-                            } else if (p == false) {
-                              return " -";
-                            }}                            
-                    $('.right-side').append('<button class="hide">' + 'Hide reviews' + '</button>')
-                    $('.comments').append('<div class="content"><p class="name">' + value.name + '</p>\
-                    <div class="status"><span class="dot"><p>' + status(value.positive) + '</p></span></div>\
-                    <p class="comment">' + value.comment + '</p></div><hr>') 
+            success: function ( result ) {
+                $.each(result, function ( index, value ) {
+                    var start = new Date(value.date_start);
+                    var end = new Date(value.date_end);
+                    star(value.stars);
+                    var id = + new Date();
+                    $('.wrapper').append(`<section class="hotels${id}"><div class="hotel"><div class="left-side">
+                <img class="image" src="${value.images[ 0 ]}" alt="hotel_image"></div>
+                <div id="right-side" class="right-side${id}"><div class="stars">${star(value.stars)}</div>
+                <span class="name">${value.name}</span><span class="city">${value.city}</span>
+                <p class="description">${value.description}</p>
+                <button id="reviews${id}">Show reviews</button>
+                <div class="dateprice"><p class="price">${value.price} &euro;</p>
+                <p class="date">${start.getDate()}.${start.getMonth()}.${start.getFullYear()} -
+                 ${end.getDate()}.${end.getMonth()}.${end.getFullYear()}</p></div></div></div></section>`);
+                    $("#reviews" + id).click(function (event) {
+                        event.preventDefault();
+                        $("#reviews" + id).remove();
+                        $.ajax({
+                            url: "https://prodynafakeapi.herokuapp.com/api/reviews?hotel_id="+value.id,
+                            type: 'GET',
+                            success: function ( results ) {
+                                $('.hotels'+ id).append(`<div id="comments" class="comments${id}"></div>`);
+                                $('.right-side'+ id).append(`<button class="hide${id}">Hide reviews</button>`);
+                                $.each(results, function ( index, value ) {
+                                    status(value.positive);
+                                    $('.comments' + id).append(`<div class="content"><p class="name">${value.name}</p>
+                                    <div class="status"><span class="dot"><p>${status(value.positive)}</p></span></div>
+                                    <p class="comment">${value.comment}</p></div><hr>`)
+                                    $(".hide" + id).click(function() {                           
+                                    $.ajax({
+                                           url: "https://prodynafakeapi.herokuapp.com/api/reviews?hotel_id="+value.id,
+                                           type: 'GET',
+                                        success: function(res) {
+                                            $('.wrapper .hotel .right-side'+ id).append(`<button class="review${id}">` + `Show reviews` + `</button>`)
+                                            $(".hide" + id).remove();
+                                            $(".comments" + id).slideUp();
+                                        $.each(res, function(index, value) {
+                                                       })
+                                        $(".review"+ id).click(function() {
+                                           
+                                    $.ajax({
+                                            url: "https://prodynafakeapi.herokuapp.com/api/reviews?hotel_id="+value.id,
+                                            type: 'GET',
+                                        success: function(resul) {
+                                            $(".comments" + id).show();
+                                            $(".review"+ id).hide();
+                                            $('.wrapper .hotel .right-side'+ id).append(`<button class="hiden${id}">` + `Hide reviews` + `</button>`)
+
+                                            $.each(resul, function(index, value) {
+                                                                       })
+                                                $(".hiden"+id).click(function() {
+                                                    
+                                            $.ajax({
+                                                    url: "https://prodynafakeapi.herokuapp.com/api/reviews?hotel_id="+value.id,
+                                                    type: 'GET',
+                                                success: function(resu) { 
+                                                    $(".hiden"+ id).remove();
+                                                    $(".comments" + id).slideUp();
+                                                    $(".review"+ id).show();       
+                                                    $.each(resu, function(index, value) {
+                                                                })
+                                                            }}) 
+                                                        })
+                                                      
+                                                    }}) 
+                                                })  
+                                          
+                                        }})   
+                                    })
+                                })
+                            }
+                        });
                     })
-                $(".hide").click(function() {
-                    $(".hide").hide();
-                    $(".comments").slideUp();
-                $.ajax({
-                       url: "https://prodynafakeapi.herokuapp.com/api/reviews?hotel_id=id",
-                       type: 'GET',
-                    success: function(res) {
-                    $('.wrapper .hotel .right-side').append('<button class="review">' + 'Show reviews' + '</button>')
-                    $.each(res, function(index, value) {
-                    })
-                    $(".review").click(function() {
-                        $(".hide").show();
-                        $(".comments").show();
-                        $(".review").hide();
-                $.ajax({
-                        url: "https://prodynafakeapi.herokuapp.com/api/reviews?hotel_id=id",
-                        type: 'GET',
-                    success: function(resul) {
-                        $.each(resul, function(index, value) {
-                            })
-                        }})   
-                    })
-                    }})   
-                })
-            }});
-            })
-        }});
+                });
+            }
+        });
     })
 });
+
+function status( positive ) {
+    if ( positive === true ) {
+        return "+";
+    } else if ( positive === false ) {
+        return " -";
+    }
+}
+
+function star( a ) {
+    if ( a === 5 ) {
+        return "&#9733 &#9733 &#9733 &#9733 &#9733";
+    } else if ( a === 4 ) {
+        return "&#9733 &#9733 &#9733 &#9733 &#9734";
+    } else if ( a === 3 ) {
+        return "&#9733 &#9733 &#9733 &#9734 &#9734";
+    } else if ( a === 2 ) {
+        return "&#9733 &#9733 &#9734 &#9734 &#9734";
+    } else if ( a === 1 ) {
+        return "&#9733 &#9734 &#9734 &#9734 &#9734";
+    } else {
+        return "&#9734 &#9734 &#9734 &#9734 &#9734";
+    }
+}
