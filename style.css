@@ -1,9 +1,49 @@
 body {
     background-color: #e7e7e7fd;
 }
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #737374;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
 
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 .wrapper {
     display: none;
+}
+ 
+.row {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.col-sm-5, .col-sm-7 {
+    padding: 0px;
+    margin: 0px;
+}
+.dugme {
+    width: max-content;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 #load-button {
     padding: 10px 30px;
@@ -12,7 +52,6 @@ body {
     font-weight: bold;
     font-size: 14px;
     background-color: rgb(226, 225, 225);
-    margin: 20px 320px;
 }
 #hide-button {
     display: none;
@@ -22,26 +61,29 @@ body {
     font-weight: bold;
     font-size: 14px;
     background-color: rgb(226, 225, 225);
-    margin: 20px 320px;
+}
+.hotels {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .hotel {
-    width: 800px;
-    height: 250px;
+    width: 100%;
+    height: 270px;
     background-color: rgb(248, 248, 248);
-    margin-top: 20px;
-    position: relative;
+    margin-top: 20px; 
     border-radius: 5px;
     border-color: rgba(128, 128, 128, 0.651);
     border-style: inset;
     border-width: 1px;
-    margin-left: auto;
-    margin-right: auto;
+    
 }
 
 #right-side {
-    width: 58%;
+    width: 100%;
     float: right;
-    height: 250px;
+    height: 268px;
 }
 
 #right-side span {
@@ -51,12 +93,13 @@ body {
 }
 .city {
     padding-top: 0px;
-    padding-left: 1px;
+    padding-left: 16px;
 }
 #right-side span.name {
     font-size:24px;
     font-weight: bold;
     padding-top: 20px;
+    padding-left: 15px;
 }
 
 #right-side span.name:first-letter {
@@ -66,14 +109,14 @@ body {
 #right-side p.description {
     font-size:12px;
     padding-top: 10px;
-    padding-left: 1px;
-    padding-right: 15px;
+    margin-left: 15px;
+    padding-right: 5px;
 
 }
-.left-side {
-    width: 312px;
+#left-side {
+    width: 100%;
     background-color: rgb(216, 215, 215);
-    height: 250px;
+    height: 268px;
     float: left;
     border-radius: 5px 0 0 5px;
     border-color: rgba(128, 128, 128, 0.651);
@@ -81,18 +124,18 @@ body {
     border-width: 0 1px 0 0;
 }
 .image {
-    width: 312px;
-    height: 250px;
+    width: 100%;
+    height: 268px;
 }
 #right-side button {
     padding: 10px 20px;
     border-radius: 5px;
     border-color: #d3d3d366;
     font-weight: bold;
-    bottom: 20px;
-    position: absolute;
     font-size: 14px;
     background-color: rgb(226, 225, 225);
+    margin-top: 25px;
+    margin-left: 15px;
 }
 .price {
     float: right;
@@ -118,30 +161,32 @@ body {
 .stars {
     float: right;
     margin: 10px 20px;
-
+    font-size: 20px;
 }
 #comments {
-    width: 800px;
-    height: 100%;
+    width: 100%;
+    height: max-content;
     background-color: rgb(189, 189, 189);
-    position: relative;
     border-radius: 0 0 5px 5px;
     border-color: rgba(128, 128, 128, 0.651);
     border-style: inset;
-    border-width: 1px;
+    border-width: 0 1px 1px 1px;
     margin-top: inherit;
     margin-left: auto;
     margin-right: auto;
 }
-.content {
-    width: 800px;
-    height: 170px;
+#content {
+    width: 100%;
+    height: max-content;
+}
+.comment {
+    height: min-content;
 }
 #comments hr:last-of-type {
-    display:none;
+    visibility: hidden;
 }
 
-.content p.name {
+#content p.name {
     font-size:16px;
     font-weight: bold;
     padding-top: 15px;
@@ -151,22 +196,22 @@ body {
     margin-right: 10px
 
 }  
-.content p.comment {
+#content p.comment {
     font-family: Arial, Helvetica, sans-serif;
     font-size:12px;
     width: 80%;
     float: right;
     margin-right: 10px;
-    
+    padding-top: 10px;
 }
-.content p.comment:first-letter{
+#content p.comment:first-letter{
     text-transform: uppercase;
 }
 .status {
     width: 18%;
     float: left;
-    height: 120px;
-    
+    height: 50px;
+    margin-top: 20px;
 }
 .dot {
     height: 50px;
@@ -175,7 +220,7 @@ body {
     border-radius: 50%;
     display: inline-block;
     margin-left: 40px;
-    margin-top: 50px;
+    margin-top: auto;
   }
   .dot p{
       margin-left: 20px;
@@ -185,28 +230,16 @@ body {
       font-family: Arial, Helvetica, sans-serif;
   }
   hr {
-      width: 750px;
+      width: 90%;
   }
-  @media screen and (min-width:1024px){
-    #load-button {
-        padding: 15px 45px;
-        font-size: 16px;
-        margin: 25px 500px;
-        width: 200px;
-    }
-    #hide-button {
-        padding: 15px 45px;
-        font-size: 16px;
-        margin: 25px 500px;
-        width: 200px;
-    }
+  @media screen and (min-width:993px){
     .hotel {
-        width: 1200px;
-        height: 300px;
+        width: 100%;
+        height: 320px;
     }
     
     #right-side {
-        height: 300px;
+        height: 318px;
     }
     
     #right-side span {
@@ -223,19 +256,18 @@ body {
         padding-right: 20px;
     
     }
-    .left-side {
-        width: 440px;
-        height: 300px;
+    #left-side {
+        width: 100%;
+        height: 318px;
     }
     .image {
-        width: 440px;
-        height: 300px;
+        width: 100%;
+        height: 318px;
     }
     #right-side button {
         padding: 15px 30px;
-        bottom: 30px;
         font-size: 16px;
-        width: 200px;
+        width: 200px;  
     }
     .price {
         margin-top: 20px;
@@ -258,14 +290,6 @@ body {
     .description {
         font-size: 14px;
     }
-    #comments {
-        width: 1200px;
-    }
-    .content {
-        width: 1200px;
-        height: 210px;
-    }
-    
     .content p.name {
         font-size:20px;
         padding-top: 20px;
@@ -276,87 +300,73 @@ body {
         font-size:14px;
         margin-right: 15px
     }
-    .status {
-        height: 150px;
-        
-    }
     .dot {
-        height: 75px;
-        width: 75px;
+        height: 70px;
+        width: 70px;
         margin-left: 60px;
-        margin-top: 75px;
+        margin-bottom: 10px;
       }
       .dot p{
-          margin-left: 30px;
+          margin-left: 29px;
           margin-top: 16px;
           font-weight: 1200;
           font-size: 25px;
       }
-      hr {
-          width: 1100px;
-  }
 }
 @media screen and (max-width:767px){
-    #load-button {
-        padding:5px 5px;
-        font-size: 12px;
-        margin: 15px 200px;
-        width: 70px;
-    }
-    #hide-button {
-        padding:5px 5px;
-        font-size: 12px;
-        margin: 15px 200px;
-        width: 70px;
-    }
+
     .hotel {
-        width: 450px;
-        height: 600px;
+        width: 100%;
+        height: 100%;
+        border-style: none;
     }
     
     #right-side {
-        height: 300px;
+        height: min-content;
         width: 100%;
+        border-radius: 0 0 5px 5px;
+        border-color: rgba(128, 128, 128, 0.651);
+        border-style: inset;
+        border-width: 0 1px 1px 1px;
     }
     
     #right-side span {
         font-size: 14px;
-        padding-left: 10px; 
     }
     #right-side span.name {
         font-size:24px;
-        padding-left: 10px;
+        padding-left: 15px;
     }
     
     #right-side p.description {
         font-size:14px;
         padding-top: 8px;
-        padding-left: 10px;
         padding-right: 10px;
     
     }
-    .left-side {
-        width: 450px;
-        height: 300px;
+    #left-side {
+        width: 100%;
+        height: 298px;
+        border-radius: 5px 5px 0 0;
+        border-width: 1px ;
     }
     .image {
-        width: 450px;
-        height: 300px;
+        width: 100%;
+        height: 298px;
     }
     #right-side button {
         padding: 5px 10px;
         bottom: 10px;
         font-size: 12px;
         width: 70px;
-        margin-left: 200px;
     }
     .price {
         margin-top: 20px;
-        margin-right: 10px;
+        margin-right: 15px;
         font-size: 30px;
     }
     .date {
-        margin-right: 10px;
+        margin-right: 15px;
         margin-top: 5px;
         font-size: 12px;
     }
@@ -365,18 +375,9 @@ body {
     }
     .stars {
         float: right;
-        margin: 10px 10px;
-        font-size: 14px;
+        margin: 10px 15px;
+        font-size: 18px;
     }
-    
-    #comments {
-        width: 450px;
-    }
-    .content {
-        width: 450px;
-        height: 150px;
-    }
-    
     .content p.name {
         font-size:16px;
         padding-top: 10px;
@@ -387,15 +388,11 @@ body {
         font-size:12px;
         margin-right: 5px
     }
-    .status {
-        height: 100px;
-        
-    }
     .dot {
         height: 30px;
         width: 30px;
         margin-left: 15px;
-        margin-top: 25px;
+        margin-top: 20px;
       }
       .dot p{
           margin-left: 11px;
@@ -403,7 +400,4 @@ body {
           font-weight: 700;
           font-size: 16px;
       }
-      hr {
-          width: 450px;
-  }
 }
